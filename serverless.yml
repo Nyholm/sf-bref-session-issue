@@ -1,0 +1,48 @@
+# https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/
+service: sf-session-bug
+frameworkVersion: ">=2.30.0 <3.0.0"
+configValidationMode: error
+
+plugins:
+    - ./vendor/bref/bref
+    - ./vendor/bref/extra-php-extensions
+
+provider:
+    name: aws
+    region: eu-central-1
+    runtime: provided.al2
+    stage: ${opt:stage, "dev"}
+    memorySize: 1792
+    vpc: ${self:custom.myVpc.${self:custom.stage}}
+    environment:
+        APP_ENV: prod
+        APP_RUNTIME: Runtime\Bref\Runtime
+        BREF_LOOP_MAX: 100
+        APP_SECRET: B5tk9OC11tF5vRvZt8hmLaVXe
+
+functions:
+    website:
+        handler: public/index.php
+        description: ''
+        timeout: 10 # in seconds (API Gateway has a timeout of 29 seconds)
+        layers:
+            - ${bref:layer.php-80}
+            - ${bref-extra:symfony-runtime-php-80}
+        events:
+            - httpApi: '*'
+            #- http: 'ANY /'
+            #- http: 'ANY /{proxy+}'
+
+package:
+    patterns:
+        # Excluded files and folders for deployment
+        - '!assets/**'
+        - '!node_modules/**'
+        - '!public/build/**'
+        - '!tests/**'
+        - '!var/**'
+        # If you want to include files and folders that are part of excluded folders,
+        # add them at the end
+        - 'var/cache/prod/**'
+        - 'public/build/entrypoints.json'
+        - 'public/build/manifest.json'

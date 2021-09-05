@@ -8,6 +8,18 @@
     "bref/bref": {
         "version": "1.2.14"
     },
+    "bref/extra-php-extensions": {
+        "version": "0.11.16"
+    },
+    "bref/symfony-bridge": {
+        "version": "0.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "0.1",
+            "ref": "073e577186ef96e4f26df1f8a3dc14a48826d364"
+        }
+    },
     "clue/arguments": {
         "version": "v2.1.0"
     },

@@ -1,0 +1,7 @@
+{
+    "devDependencies": {
+        "serverless": "^2.32.0"
+    },
+    "license": "UNLICENSED",
+    "private": true
+}
