@@ -29,3 +29,4 @@ services:
         arguments:
             $minLevel: 'debug'
             $output: 'php://stderr'
+            $formatter: ['App\Psr3Formatter', 'format']
