@@ -8,5 +8,8 @@ This is a small app that shows a problem with session using runtime and Bref.
 2. `yarn install` to get serverless
 3. `serverless deploy`
 4. Go the the URL in the output
-5. Login, go to /admin/one and /admin/two
+5. Try to Login
 6. Check CloudWatch for the logs
+
+You will see that you are successfully authenticated but the very next request
+fails and you are directed back to the login page.
