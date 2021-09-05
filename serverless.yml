@@ -15,7 +15,7 @@ provider:
     memorySize: 1792
     lambdaHashingVersion: 20201221
     environment:
-        APP_ENV: prod
+        APP_ENV: dev
         APP_RUNTIME: Runtime\Bref\Runtime
         BREF_LOOP_MAX: 100
         APP_SECRET: B5tk9OC11tF5vRvZt8hmLaVXe
