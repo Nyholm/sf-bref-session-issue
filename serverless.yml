@@ -13,7 +13,7 @@ provider:
     runtime: provided.al2
     stage: ${opt:stage, "dev"}
     memorySize: 1792
-    vpc: ${self:custom.myVpc.${self:custom.stage}}
+    lambdaHashingVersion: 20201221
     environment:
         APP_ENV: prod
         APP_RUNTIME: Runtime\Bref\Runtime
