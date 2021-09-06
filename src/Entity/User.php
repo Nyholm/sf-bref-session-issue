@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-
 namespace App\Entity;
-
 
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -19,7 +17,6 @@ class User implements UserInterface
 
     public function getRoles()
     {
-
     }
 
     public function getPassword()
@@ -30,12 +27,10 @@ class User implements UserInterface
     public function getSalt()
     {
         return '';
-
     }
 
     public function eraseCredentials()
     {
-
     }
 
     public function getUsername()
@@ -43,13 +38,8 @@ class User implements UserInterface
         return $this->username;
     }
 
-
     public function getUserIdentifier()
     {
         return $this->username;
-
     }
-
-
-
 }
